@@ -1,0 +1,17 @@
+[server]
+port = 5555
+
+[node]
+detect-drivers = false
+
+[[node.driver-configuration]]
+display-name = Chrome
+webdriver-executable = "C:\\SeleniumGRID\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe"
+max-sessions = 7
+stereotype = '{browserName chrome, browserVersion latest}'
+
+[[node.driver-configuration]]
+display-name = Firefox
+webdriver-executable = "C:\\SeleniumGRID\\geckodriver-v0.36.0-win-aarch64\\geckodriver.exe"
+max-sessions = 6
+stereotype = '{browserName firefox, browserVersion latest}'

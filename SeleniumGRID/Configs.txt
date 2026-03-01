@@ -1,0 +1,3 @@
+java -jar selenium-server-4.40.0.jar node --config drivers.toml
+
+java -jar selenium-server-4.40.0.jar hub
