@@ -30,8 +30,8 @@ public class DriverManager {
             if (props.getProperty("headless").equalsIgnoreCase("true")) {
                 chromeOptions.addArguments("--headless");
             }
-            if (props.getProperty("execution").equalsIgnoreCase("Grid")) {
-                chromeOptions.addArguments("--headless");
+            if (props.getProperty("execution").contains("grid")) {
+//                chromeOptions.addArguments("--headless");
                 mydriver.set(new RemoteWebDriver(gridURL, chromeOptions));
             } else if (props.getProperty("execution").equalsIgnoreCase("Local")) {
                 mydriver.set(new ChromeDriver(chromeOptions));
@@ -40,7 +40,7 @@ public class DriverManager {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.setCapability("browserName", "firefox");
 
-            if (props.getProperty("execution").equalsIgnoreCase("Grid")) {
+            if (props.getProperty("execution").contains("grid")) {
                 mydriver.set(new RemoteWebDriver(gridURL, firefoxOptions));
             } else if (props.getProperty("execution").equalsIgnoreCase("Local")) {
                 mydriver.set(new ChromeDriver());
@@ -49,7 +49,7 @@ public class DriverManager {
             EdgeOptions edgeOptions = new EdgeOptions();
             edgeOptions.setCapability("browserName", "MicrosoftEdge");
 
-            if (props.getProperty("execution").equalsIgnoreCase("Grid")) {
+            if (props.getProperty("execution").contains("grid")) {
                 mydriver.set(new RemoteWebDriver(gridURL, edgeOptions));
             } else if (props.getProperty("execution").equalsIgnoreCase("Local")) {
                 mydriver.set(new ChromeDriver());

@@ -40,7 +40,7 @@ public class MyHooks {
         }
 
 
-        if (props.getProperty("execution").equalsIgnoreCase("Grid")) {
+        if (props.getProperty("execution").equalsIgnoreCase("LocalGrid")) {
             System.out.println("[MyHooks] BeforeAll - starting Selenium Grid via SeleniumGridManager...");
             try {
                 gridManager.startGrid();
@@ -54,7 +54,7 @@ public class MyHooks {
 
     @AfterAll
     public static void afterAll() {
-        if (props.getProperty("execution").equalsIgnoreCase("Grid")) {
+        if (props.getProperty("execution").equalsIgnoreCase("LocalGrid")) {
             System.out.println("[MyHooks] AfterAll - stopping Selenium Grid via SeleniumGridManager...");
             try {
                 gridManager.stopGrid();
