@@ -45,6 +45,4 @@ public class LoginSteps {
         loginPage.verifyErrorMessage();
         loginPage.logout();
     }
-
-
 }
